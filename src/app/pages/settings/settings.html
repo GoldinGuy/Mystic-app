@@ -1,0 +1,29 @@
+<!-- Page Form-->
+<ion-header box-shadow>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button defaultHref="/"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-uppercase>Deco New</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Content -->
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item transparent>
+          <ion-lable text-size-xs>Enable push notification</ion-lable>
+          <ion-checkbox slot="end" [(ngModel)]="isPushNotificationEnabled" (ionChange)="ionChange($event)"></ion-checkbox>
+        </ion-item>
+        <ion-item transparent>
+          <ion-lable text-size-xs>Testing our application with Rtl (enable)</ion-lable>
+          <ion-checkbox slot="end" [(ngModel)]="isRTLEnabled" (ionChange)="ionChangeRTL($event)"></ion-checkbox>
+        </ion-item>
+
+        <ion-button default-button margin (click)="changeTheme('autumn')">Light Mode</ion-button>
+        <ion-button default-button margin (click)="changeTheme('night')">Dark Mode</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
