@@ -24,7 +24,7 @@ import { Storage } from "@ionic/storage";
 import { Router, ActivatedRoute } from "@angular/router";
 // import { SMS } from "@ionic-native/sms/ngx";
 
-import swiss from "./swiss.js";
+import swiss from "./swiss.js.js";
 
 @Component({
 	selector: "app-tournaments",

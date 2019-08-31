@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { ModalController, AlertController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 import { Router, ActivatedRoute } from "@angular/router";
-import swiss from "../tournament/swiss.js";
-import { SMS } from "@ionic-native/sms/ngx";
+import swiss from "../tournaments/swiss.js";
+// import { SMS } from "@ionic-native/sms/ngx";
 
 @Component({
 	selector: "app-standings",
@@ -15,7 +15,7 @@ export class standingsPage {
 		private router: Router,
 		private storage: Storage,
 		private route: ActivatedRoute,
-		private sms: SMS,
+		// private sms: SMS,
 		public alertController: AlertController
 	) {}
 

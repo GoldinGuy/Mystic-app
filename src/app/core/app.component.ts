@@ -62,9 +62,9 @@ export class AppComponent {
 			},
 			{
 				title: "Tournaments",
-				component: "TournamentsPage",
+				component: "EventsPage",
 				icon: "ios-trophy",
-				url: "tournaments"
+				url: "events"
 			},
 			{
 				title: "Settings",

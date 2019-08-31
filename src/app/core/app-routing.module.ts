@@ -15,24 +15,7 @@ const routes: Routes = [
 		path: "bookmark",
 		loadChildren: "../pages/bookmark/bookmark.module#BookmarkPageModule"
 	},
-	{
-		path: "events",
-		children: [
-			{
-				path: "",
-				loadChildren: "../events/events.module#eventsPageModule"
-			},
-			{
-				path: "tournaments",
-				loadChildren:
-					"../events/tournaments/tournaments.module#TournamentsPageModule"
-			},
-			{
-				path: "standings",
-				loadChildren: "../events/standings/standings.module#standingsPageModule"
-			}
-		]
-	},
+
 	// {
 	// 	path: "tournaments",
 	// 	loadChildren:
@@ -65,6 +48,24 @@ const routes: Routes = [
 	{
 		path: "comment-page",
 		loadChildren: "../pages/comments/comments.module#CommentsPageModule"
+	},
+	{
+		path: "events",
+		children: [
+			{
+				path: "",
+				loadChildren: "../events/events.module#EventsPageModule"
+			},
+			{
+				path: "tournaments",
+				loadChildren:
+					"../events/tournaments/tournaments.module#TournamentsPageModule"
+			},
+			{
+				path: "standings",
+				loadChildren: "../events/standings/standings.module#standingsPageModule"
+			}
+		]
 	}
 ];
 
