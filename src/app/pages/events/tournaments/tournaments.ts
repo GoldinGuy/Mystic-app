@@ -24,7 +24,7 @@ import { Storage } from "@ionic/storage";
 import { Router, ActivatedRoute } from "@angular/router";
 // import { SMS } from "@ionic-native/sms/ngx";
 
-import swiss from "./swiss.js.js";
+import swiss from "./swiss.js";
 
 @Component({
 	selector: "app-tournaments",
@@ -187,7 +187,7 @@ export class TournamentsPage {
 
 	endEvent = () => {
 		this.round = 0;
-		this.router.navigate(["/menu/events/standings"]);
+		this.router.navigate(["events/standings"]);
 	};
 }
 

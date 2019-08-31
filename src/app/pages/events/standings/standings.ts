@@ -7,8 +7,8 @@ import swiss from "../tournaments/swiss.js";
 
 @Component({
 	selector: "app-standings",
-	templateUrl: "standings.page.html",
-	styleUrls: ["standings.page.scss"]
+	templateUrl: "standings.html",
+	styleUrls: ["standings.scss"]
 })
 export class standingsPage {
 	constructor(
@@ -98,23 +98,23 @@ export class standingsPage {
 		}
 	}
 
-	shareStandings() {
-		let participantRefactor = {};
-		this.participants.forEach(participant => {
-			participantRefactor[participant.id] = participant.phoneNumber;
-		});
+	// shareStandings() {
+	// 	let participantRefactor = {};
+	// 	this.participants.forEach(participant => {
+	// 		participantRefactor[participant.id] = participant.phoneNumber;
+	// 	});
 
-		let numbers = [];
-		let string = this.results.map(result => {
-			numbers.push(participantRefactor[result.id]);
+	// 	let numbers = [];
+	// 	let string = this.results.map(result => {
+	// 		numbers.push(participantRefactor[result.id]);
 
-			return `${result.seed} | ${result.id} | Rounds Won: ${result.wins}`;
-		});
-		let res = string.join("\n");
-		let phoneNumbers = numbers.join(", ");
+	// 		return `${result.seed} | ${result.id} | Rounds Won: ${result.wins}`;
+	// 	});
+	// 	let res = string.join("\n");
+	// 	let phoneNumbers = numbers.join(", ");
 
-		this.sms.send(phoneNumbers, res);
-	}
+	// 	this.sms.send(phoneNumbers, res);
+	// }
 
 	back() {
 		console.log("Going Back");

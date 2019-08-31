@@ -15,12 +15,15 @@ const routes: Routes = [
 		path: "bookmark",
 		loadChildren: "../pages/bookmark/bookmark.module#BookmarkPageModule"
 	},
-
-	// {
-	// 	path: "tournaments",
-	// 	loadChildren:
-	// 		"../pages/tournaments/tournaments.module#TournamentsPageModule"
-	// },
+	{
+		path: "events",
+		loadChildren: "../pages/events/events.module#EventsPageModule"
+	},
+	{
+		path: "tournaments",
+		loadChildren:
+			"../pages/tournaments/tournaments.module#TournamentsPageModule"
+	},
 	{
 		path: "about",
 		loadChildren: "../pages/about/about.module#AboutPageModule"
@@ -48,25 +51,25 @@ const routes: Routes = [
 	{
 		path: "comment-page",
 		loadChildren: "../pages/comments/comments.module#CommentsPageModule"
-	},
-	{
-		path: "events",
-		children: [
-			{
-				path: "",
-				loadChildren: "../events/events.module#EventsPageModule"
-			},
-			{
-				path: "tournaments",
-				loadChildren:
-					"../events/tournaments/tournaments.module#TournamentsPageModule"
-			},
-			{
-				path: "standings",
-				loadChildren: "../events/standings/standings.module#standingsPageModule"
-			}
-		]
 	}
+	// {
+	// 	path: "events",
+	// 	children: [
+	// 		{
+	// 			path: "",
+	// 			loadChildren: "../events/events.module#EventsPageModule"
+	// 		},
+	// 		{
+	// 			path: "tournaments",
+	// 			loadChildren:
+	// 				"../events/tournaments/tournaments.module#TournamentsPageModule"
+	// 		},
+	// 		{
+	// 			path: "standings",
+	// 			loadChildren: "../events/standings/standings.module#standingsPageModule"
+	// 		}
+	// 	]
+	// }
 ];
 
 @NgModule({
