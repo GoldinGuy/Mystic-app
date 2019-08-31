@@ -1,0 +1,240 @@
+<ion-header box-shadow>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Mystic - Your Magic Resource</ion-title>
+	</ion-toolbar>
+	<ion-toolbar>
+		<ion-segment [(ngModel)]="selectedItem">
+			<ion-segment-button
+				text-capitalize
+				[value]="item.name"
+				*ngFor="let item of categories"
+				(click)="refreshData(item)"
+			>
+				{{ item.name }}
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<!--<ion-grid>
+		<ion-row>
+			<ion-col size="12">
+				<ion-card background-size
+					><img src="/assets/imgs/home4.JPG" />
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	-->
+
+	<!-- <ion-content fullscreen common-parallax [scrollEvents]="true" class="lightmode"> -->
+	<div class="wrap-blog-post bg-light ">
+		<div class="cover">
+			<div class="slogan p dl-40 txt-light ">
+				<p class="uppercase fs-14"></p>
+				<!-- <h4 no-margin text-center class="fs-34 top beleren">
+					MATCH PAIRINGS
+				</h4> -->
+			</div>
+			<div class="bg-img">
+				<img
+					class="parallax-obj parallax-up-obj parallax-blur-obj"
+					src="/assets/imgs/home4.JPG"
+				/>
+			</div>
+		</div>
+	</div>
+	<!-- slot="fixed" -->
+	<ion-fab class="filter" vertical="top" horizontal="end" edge id="fab1">
+		<ion-fab-button
+			mini
+			class="e2eFabTopRight"
+			routerLink="/menu/tools/timer"
+			routerDirection="forward"
+		>
+			<ion-icon name="md-text"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+
+	<br />
+	<!-- <div text-center class="fs-30 fw-900 mgt-20 mgb-20 spacing1">
+		<ion-button
+			expand="round"
+			color="primary"
+			size="medium"
+			class="txt-light mgt--20 but"
+			type="submit"
+			(click)="textPairings()"
+			mode="ios"
+		>
+			<h2 class="beleren white">SHARE PAIRINGS</h2>
+		</ion-button>
+	</div> -->
+	<div class="pdl-20 pdr-20 pdt-5">
+		<h2 class="beleren">ROUND {{ this.round }}</h2>
+		<br />
+
+		<!-- Match pairings -->
+
+		<ion-card
+			no-margin
+			class="mgb-15"
+			color="tourney"
+			*ngFor="let pairing of pairings"
+		>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<h5 class="open fs-17 ion-text-capitalize" side="start">
+							{{ pairing.home.id }}
+						</h5>
+					</ion-col>
+					<ion-col>
+						<h3 ion-text-center class="center beleren" *ngIf="pairing.bye">
+							BYE
+						</h3>
+						<h3 ion-text-center class="center beleren" *ngIf="!pairing.bye">
+							VS
+						</h3>
+					</ion-col>
+					<ion-col>
+						<h5 float-right class="open fs-17 ion-text-capitalize" side="end">
+							{{ pairing.away.id }}
+						</h5>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-select
+							class="beleren fs-18"
+							[(ngModel)]="pairing.home.score"
+							side="start"
+							placeholder="0"
+							interface="popover"
+							value="0"
+							mode="md"
+							float-left
+							*ngIf="!pairing.bye"
+						>
+							<ion-select-option value="0">0</ion-select-option>
+							<ion-select-option value="1">1</ion-select-option>
+							<ion-select-option value="2">2</ion-select-option>
+						</ion-select>
+					</ion-col>
+					<ion-col>
+						<ion-select
+							[(ngModel)]="pairing.away.score"
+							side="end"
+							float-right
+							value="0"
+							mode="md"
+							class="beleren fs-18"
+							placeholder="0"
+							interface="popover"
+							*ngIf="!pairing.bye"
+						>
+							<ion-select-option value="0">0</ion-select-option>
+							<ion-select-option value="1">1</ion-select-option>
+							<ion-select-option value="2">2</ion-select-option>
+						</ion-select>
+					</ion-col>
+					<!-- <ion-toolbar>
+						<ion-segment ion-text-center mode="ios"> -->
+					<!-- <ion-segment-button
+                mode="ios"
+                (ionSelect)="segmentButtonClicked($event, pairing.index)"
+                value="home"
+              >
+                <ion-label>Win</ion-label>
+              </ion-segment-button> -->
+
+					<!-- <ion-segment-button
+                checked
+                mode="ios"
+                (ionSelect)="segmentButtonClicked($event, pairing.index)"
+                value="draw"
+              >
+                <ion-label>Draw</ion-label>
+              </ion-segment-button>
+              <ion-segment-button
+                mode="ios"
+                (ionSelect)="segmentButtonClicked($event, pairing.index)"
+                value="away"
+              >
+                <ion-label>Win</ion-label>
+              </ion-segment-button> -->
+					<!-- </ion-segment>
+					</ion-toolbar> -->
+				</ion-row>
+			</ion-grid>
+		</ion-card>
+		<!-- 
+		<ion-card
+			no-margin
+			class="mgb-15"
+			color="tourney"
+			*ngFor="let pairing of pairings"
+		>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						<h5 class="open fs-16 ion-text-capitalize" side="start">
+							{{ pairing.home.id }}
+						</h5>
+						<ion-select
+							[(ngModel)]="pairing.home.points"
+							side="start"
+							interface="popover"
+							*ngIf="!pairing.bye"
+						>
+							<ion-select-option value="0">0</ion-select-option>
+							<ion-select-option value="1">1</ion-select-option>
+							<ion-select-option value="2">2</ion-select-option>
+						</ion-select>
+					</ion-col>
+					<ion-col>
+						<h3 class="center beleren" *ngIf="pairing.bye">BYE</h3>
+						<h3 class="center beleren" *ngIf="!pairing.bye">VS</h3>
+					</ion-col>
+					<ion-col>
+						<h5 class="open fs-15 ion-text-capitalize" side="end">
+							{{ pairing.away.id }}
+						</h5>
+						<ion-select
+							[(ngModel)]="pairing.away.points"
+							side="end"
+							interface="popover"
+							*ngIf="!pairing.bye"
+						>
+							<ion-select-option value="0">0</ion-select-option>
+							<ion-select-option value="1">1</ion-select-option>
+							<ion-select-option value="2">2</ion-select-option>
+						</ion-select>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-card> -->
+
+		<!-- Share pairings -->
+
+		<br />
+
+		<div text-center class="fs-30 fw-900 mgt- mgb-30 spacing1">
+			<ion-button
+				expand="round"
+				color="primary"
+				size="medium"
+				class="txt-light mgt--20 but"
+				type="submit"
+				(click)="nextRound()"
+				mode="ios"
+			>
+				<h2 class="beleren white">NEXT ROUND</h2>
+			</ion-button>
+		</div>
+	</div>
+</ion-content>

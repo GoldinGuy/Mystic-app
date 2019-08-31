@@ -1,0 +1,174 @@
+<ion-content fullscreen common-parallax [scrollEvents]="true" class="lightmode">
+    <div class="wrap-blog-post bg-light offset-top-obj">
+        <div class="cover">
+            <div class="slogan p dl-40 txt-light ">
+                <p class="uppercase fs-14"></p>
+                <h4 no-margin class="fs-34 top beleren">TOURNAMENTS</h4>
+            </div>
+            <div class="bg-img">
+                <img class="" src="/assets/images/lemon6.png" />
+            </div>
+        </div>
+    </div>
+    <div class=" pdl-50 pdr-50">
+        <br />
+        <h2 class="beleren">ADD PLAYERS</h2>
+        <br />
+        <ion-item lines="none" class="bg-white bdra-30 shadow-1 bg-light">
+            <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="bg-white bdra-30 shadow-1 mgt-10 bg-light">
+            <ion-input placeholder="Phone Number" [(ngModel)]="phoneNumber"></ion-input>
+        </ion-item>
+        <div text-right class="mgt-45 ">
+            <ion-button
+                (click)="addPlayer()"
+                expand="round"
+                color="primary"
+                size="small"
+                class="txt-light mgt--40"
+            >
+                <ion-icon class="txt-light" name="ios-add"></ion-icon>
+            </ion-button>
+        </div>
+        <h2 class="beleren">ROUNDS</h2>
+        <ion-toolbar>
+            <ion-segment mode="ios">
+                <ion-segment-button
+                    *ngFor="let choice of rounds"
+                    (name)="(choice.val)"
+                    mode="ios"
+                    class="h-30 mgt-20"
+                    (ionSelect)="segmentButtonClicked($event)"
+                    value="{{ choice.val }}"
+                    checked="{{ choice.isChecked }}"
+                >
+                    <ion-label class="open fs-14">{{ choice.val }}</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        </ion-toolbar>
+        <br />
+        <h2 class="beleren">PLAYERS</h2>
+
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of participants">
+                <ion-item class="open">
+                    <ion-label class="ion-text-capitalize open">{{ item.id }}</ion-label>
+                    <ion-label class="open">{{ item.phoneNumber }}</ion-label>
+                </ion-item>
+                <ion-item-options side="end">
+                    <ion-item-option (click)="remove(item.id)">Remove</ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+
+            <ion-item-sliding *ngIf="swipeLeft == true">
+                <ion-item class="open"
+                    ><ion-label>Swipe left to remove</ion-label>
+                    <ion-icon name="ios-arrow-round-back" class="mgl-10"></ion-icon
+                ></ion-item>
+                <ion-item-options side="end">
+                    <ion-item-option (click)="removeTutorial()">Remove</ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+
+            <ion-item lines="none"
+                ><p>Remove all</p>
+                <div text-right class="mgt-30 ">
+                    <ion-button
+                        expand="round"
+                        color="primary"
+                        size="small"
+                        (click)="removeAll()"
+                        class="txt-light mgt--40 mgl-100"
+                        ><ion-icon name="close-circle"></ion-icon>
+                    </ion-button></div
+            ></ion-item>
+        </ion-list>
+
+        <!-- <p class="open fs-15">Remove all players</p> -->
+
+        <div text-center class="fs-25 fw-900 mgt-15 mgb-30 spacing1">
+            <ion-button
+                expand="round"
+                color="primary"
+                size="medium"
+                class="txt-light mgt--20 but"
+                type="submit"
+                (disabled)="isDisabled()"
+                (click)="startEvent()"
+                mode="ios"
+            >
+                <h2 class="beleren white">START AN EVENT</h2>
+            </ion-button>
+        </div>
+    </div>
+</ion-content>
+
+<!-- 
+	        routerLink="/menu/tab-profile/tournament"
+        routerDirection="forward"
+	<ion-content fullscreen common-parallax [scrollEvents]="true">
+	<div class="wrap-blog-post bg-light offset-top-obj">
+		<div class="cover">
+			<div class="slogan p dl-40 txt-light ">
+				<p class="uppercase fs-14"></p>
+				<h4 no-margin class="fs-34 top beleren">TOURNAMENTS</h4>
+			</div>
+			<div class="bg-img">
+				<img
+					class="parallax-obj parallax-up-obj parallax-blur-obj"
+					src="/assets/images/lemon6.png"
+				/>
+			</div>
+		</div>
+	</div>
+	<div padding class="mgt-10 main-content">
+		
+			<div class="bg-profile shadow-4">
+				<img
+					class="parallax-obj parallax-up-obj parallax-blur-obj"
+					src="assets/images/event.webp"
+				/>
+			</div>
+		</div> 
+
+		<ion-item>
+			<ion-label class="beleren">PLAYER</ion-label>
+			<ion-input placeholder="Jace Beleren" [(ngModel)]="name"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label class="beleren">PHONE</ion-label>
+			<ion-input
+				placeholder="123 456 7890"
+				[(ngModel)]="phoneNumber"
+			></ion-input>
+			<ion-button (click)="addPlayer()">Add</ion-button>
+		</ion-item>
+
+		<!-- List of Sliding Items -->
+<!-- <h2 class="beleren">PLAYERS</h2>
+
+		<ion-list>
+			<ion-item-sliding *ngFor="let item of participants">
+				<ion-item>
+					<ion-label>{{ item.id }}</ion-label>
+					<ion-label>{{ item.phoneNumber }}</ion-label>
+				</ion-item>
+				<ion-item-options side="end">
+					<ion-item-option (click)="remove(item.id)">Remove</ion-item-option>
+				</ion-item-options>
+			</ion-item-sliding>
+		</ion-list>
+
+		<ion-item>
+			<ion-label position="fixed" class="beleren">ROUNDS</ion-label>
+			<ion-input type="number" placeholder="0" value=""></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-button class="beleren">
+				START TOURNAMENT
+			</ion-button>
+		</ion-item>
+	</div>
+</ion-content> -->
