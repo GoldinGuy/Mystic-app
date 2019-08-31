@@ -37,6 +37,12 @@ export class AppComponent {
 		this.pages = [
 			{ title: "Home", component: "HomePage", icon: "book", url: "home" },
 			{
+				title: "Life Tracker",
+				component: "LifeTrackerPage",
+				icon: "ios-heart",
+				url: "life"
+			},
+			{
 				title: "Category",
 				component: "CategoryPage",
 				icon: "list-box",
@@ -53,6 +59,12 @@ export class AppComponent {
 				component: "AboutPage",
 				icon: "ios-flag",
 				url: "about"
+			},
+			{
+				title: "Tournaments",
+				component: "TournamentsPage",
+				icon: "ios-trophy",
+				url: "tournaments"
 			},
 			{
 				title: "Settings",

@@ -1,45 +1,44 @@
 :host-context(single-page) {
-  [background-size] {
-    height: 250px;
-  }
+	[background-size] {
+		height: 250px;
+	}
 
-  ion-card {
-    --background: var(--deco-backgroundColor, #fafafa);
-    margin-top: -20px;
+	ion-card {
+		--background: var(--mystic-backgroundColor, #fafafa);
+		margin-top: -20px;
 
-    [category] {
-      top: 8px;
-      left: 0;
-    }
-  }
+		[category] {
+			top: 8px;
+			left: 0;
+		}
+	}
 
-  a {
-    color: red;
-  }
+	a {
+		color: #5e548e;
+	}
 
-  i {
-    font-style: italic;
-    color: var(--deco-light, #1b1e28);
-  }
+	i {
+		font-style: italic;
+		color: var(--mystic-light, #1b1e28);
+	}
 
-  b {
-    font-style: bold !important;
-    color: var(--deco-light, #1b1e28);
-  }
+	b {
+		font-style: bold !important;
+		color: var(--mystic-light, #1b1e28);
+	}
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--deco-light, #1b1e28) !important;
-  }
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--mystic-light, #1b1e28) !important;
+	}
 
-  p {
-    color: var(--deco-light, #1b1e28) !important;
-    font-size: 14px !important;
-    line-height: 16px !important;
-    margin: 10px 0 !important;
-  }
-
+	p {
+		color: var(--mystic-light, #1b1e28) !important;
+		font-size: 14px !important;
+		line-height: 16px !important;
+		margin: 10px 0 !important;
+	}
 }
