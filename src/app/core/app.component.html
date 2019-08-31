@@ -15,12 +15,9 @@
 					<ion-col size="12" class="ion-align-self-center">
 						<!-- Menu List -->
 						<ion-list class="ion-no-padding">
-							<ion-menu-toggle
-								mode="md"
-								auto-hide="false"
-								*ngFor="let p of pages"
-							>
+							<ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
 								<ion-item
+									no-lines
 									lines="none"
 									class="ion-no-padding"
 									[routerDirection]="'root'"

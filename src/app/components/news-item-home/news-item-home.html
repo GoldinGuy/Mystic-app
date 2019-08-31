@@ -1,15 +1,23 @@
-<ion-card no-margin box-shadow border-radius *ngIf="data" (click)="openSinglePost(data)">
-  <div card-image>
-    <img border-radius [src]="data.image" alt="">
-    <span border-radius category text-uppercase>{{data.category}}</span>
-  </div>
-  <ion-card-content>
-    <h4 text-wrap text-size-xs>{{data.title}}</h4>
-    <div dataTime class="ion-margin-top">
-      <ion-chip>
-        <ion-icon icon name="ios-stopwatch"></ion-icon>
-        <ion-label text-size-p class="ion-margin-end">{{data.time | date:'d MMMM yyyy'}}</ion-label>
-      </ion-chip>
-    </div>
-  </ion-card-content>
+<ion-card
+	no-margin
+	box-shadow
+	border-radius
+	*ngIf="data"
+	(click)="openSinglePost(data)"
+>
+	<div card-image>
+		<img border-radius [src]="data.image" alt="" />
+		<span border-radius category text-uppercase>{{ data.category }}</span>
+	</div>
+	<ion-card-content>
+		<h4 text-wrap text-size-xs>{{ data.title }}</h4>
+		<div dataTime class="ion-margin-top">
+			<ion-chip>
+				<ion-icon icon name="ios-stopwatch"></ion-icon>
+				<ion-label text-size-p class="ion-margin-end">{{
+					data.time | date: "d MMMM yyyy"
+				}}</ion-label>
+			</ion-chip>
+		</div>
+	</ion-card-content>
 </ion-card>
