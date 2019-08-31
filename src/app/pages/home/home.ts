@@ -31,6 +31,7 @@ export class HomePage {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   categories: any = [];
   posts: any = [];
+  selectedPosts: any = [];
   postsRecentNews: any = [];
   selectedCategory: any;
   selectedItem: any;
@@ -71,7 +72,12 @@ export class HomePage {
     this.posts = await this.http
       .get(`https://mystic-api-test.herokuapp.com/articles`)
       .toPromise();
-    console.log(this.posts);
+
+    this.selectedPosts = [];
+    for (let i = 0; i < 3; i++) {
+      this.selectedPosts.push(this.posts.shift());
+    }
+    console.log(this.selectedPosts);
   }
 
   // showBannerAds() {
