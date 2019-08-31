@@ -51,7 +51,7 @@ export class EventsPage {
 		}
 
 		if (this.round != 0) {
-			this.router.navigate(["/events/tournament"]);
+			this.router.navigate(["/tournaments"]);
 		}
 	}
 
@@ -73,7 +73,7 @@ export class EventsPage {
 				new: true
 			}
 		};
-		this.router.navigate(["/events/tournaments"], navigationExtras);
+		this.router.navigate(["/tournaments"], navigationExtras);
 	}
 
 	addPlayer = async () => {

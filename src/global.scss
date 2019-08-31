@@ -15,62 +15,62 @@ img {
 	display: flex !important;
 }
 
-ion-tabbar {
-	border: none !important;
-}
-ion-toolbar {
-	--background: black;
-	--border-width: 0 0 0 !important;
-}
+// ion-tabbar {
+// 	border: none !important;
+// }
+// ion-toolbar {
+// 	--background: black;
+// 	--border-width: 0 0 0 !important;
+// }
 
 ion-content[fullscreen] {
 	--offset-top: 76px !important;
 }
 
-ion-header {
-	z-index: 10000000000;
-	img.logo_brand {
-		height: 32px;
-	}
-	ion-back-button {
-		--icon-font-size: 33px !important;
-		font-size: 33px !important;
-		&.sc-ion-back-button-ios-h {
-			--icon-margin-start: 15px;
-			--color: var(--ion-text-color);
-		}
-	}
-	ion-toolbar {
-		--background: var(--ion-toolbar-background-color, #fff);
-		ion-title {
-			text-transform: uppercase;
-			font-size: 15px;
-			letter-spacing: 0.5px;
-			font-weight: 600;
-			&.title-ios {
-				/*padding: 0 15px;*/
-				text-align: left;
-			}
-		}
-	}
-	&::after {
-		content: unset !important;
-	}
-	&.header-transparent {
-		ion-toolbar {
-			--background: transparent;
-		}
-	}
-	&.header-opacity {
-		ion-toolbar {
-			--background: rgba(255, 255, 255, 0.5);
-		}
-	}
-}
+// ion-header {
+// 	z-index: 10000000000;
+// 	img.logo_brand {
+// 		height: 32px;
+// 	}
+// 	ion-back-button {
+// 		--icon-font-size: 33px !important;
+// 		font-size: 33px !important;
+// 		&.sc-ion-back-button-ios-h {
+// 			--icon-margin-start: 15px;
+// 			--color: var(--ion-text-color);
+// 		}
+// 	}
+// 	ion-toolbar {
+// 		--background: var(--ion-toolbar-background-color, #fff);
+// 		ion-title {
+// 			text-transform: uppercase;
+// 			font-size: 15px;
+// 			letter-spacing: 0.5px;
+// 			font-weight: 600;
+// 			&.title-ios {
+// 				/*padding: 0 15px;*/
+// 				text-align: left;
+// 			}
+// 		}
+// 	}
+// 	&::after {
+// 		content: unset !important;
+// 	}
+// 	&.header-transparent {
+// 		ion-toolbar {
+// 			--background: transparent;
+// 		}
+// 	}
+// 	&.header-opacity {
+// 		ion-toolbar {
+// 			--background: rgba(255, 255, 255, 0.5);
+// 		}
+// 	}
+// }
 
-.tab-btn-selected {
-	color: #fff;
-}
+// .tab-btn-selected {
+// 	color: #fff;
+// }
 
 .offset-top-obj {
 	margin-top: calc(var(--offset-top) * -1) !important;
@@ -86,26 +86,26 @@ ion-list {
 	background: transparent;
 }
 
-/*background color*/
-.bg-white {
-	background: #fff;
-}
-.bg-white-2 {
-	background: #f1f1f1;
-}
-.bg-white-3 {
-	background: #e9e9e9;
-}
+// /*background color*/
+// .bg-white {
+// 	background: #fff;
+// }
+// .bg-white-2 {
+// 	background: #f1f1f1;
+// }
+// .bg-white-3 {
+// 	background: #e9e9e9;
+// }
 
-.bg-black {
-	background: #111;
-}
-.bg-black-2 {
-	background: #222;
-}
-.bg-black-3 {
-	background: #333;
-}
+// .bg-black {
+// 	background: #111;
+// }
+// .bg-black-2 {
+// 	background: #222;
+// }
+// .bg-black-3 {
+// 	background: #333;
+// }
 
 .bg-base {
 	background: var(--ion-color-base);
@@ -1466,19 +1466,30 @@ ion-button[color="danger"] {
 	--box-shadow: 0px 2px 7px 0px var(--ion-color-danger-shadow);
 }
 
-ion-slides {
-	--bullet-background-active: #fff !important;
-	overflow: unset !important;
-	.swiper-wrapper {
-		overflow: unset !important;
-		height: 100% !important;
-		/*transition: 1s cubic-bezier(0.01, 0.63, 0.71, 0.82) !important;*/
-		ion-slide {
-			/*height: 100% !important;*/
-		}
-	}
+// ion-slides {
+// 	--bullet-background-active: #fff !important;
+// 	overflow: unset !important;
+// 	.swiper-wrapper {
+// 		overflow: unset !important;
+// 		height: 100% !important;
+// 		/*transition: 1s cubic-bezier(0.01, 0.63, 0.71, 0.82) !important;*/
+// 		ion-slide {
+// 			/*height: 100% !important;*/
+// 		}
+// 	}
+// }
+
+.light-purp {
+	color: #9f86c0 !important;
+	// background-color: #9f86c0 !important;
 }
 
-.lightmode {
-	background-color: #f8f8f8;
+.med-purp {
+	color: #5e548e !important;
+	// background-color: #5e548e !important;
+}
+
+.dark-purp {
+	color: #231942 !important;
+	// background-color: #231942 !important;
 }
