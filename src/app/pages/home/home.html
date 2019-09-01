@@ -24,16 +24,20 @@
 	<ion-grid>
 		<ion-row>
 			<ion-col size="12">
-				<!-- Featured News -->
 				<h1 text-size-lg>Latest in Magic</h1>
+			</ion-col>
+			<ion-col size="12" *ngIf="dataNotLoaded">
+				PUT LOADING GIF HERE
+			</ion-col>
+			<ion-col size="12">
 				<!-- Slider For Featured News -->
-				<ion-slides #wizardSlider pager="true">
+				<ion-slides *ngIf="dataLoaded | async" #wizardSlider pager="true">
 					<ion-slide
 						background-size
 						padding
-						*ngFor="let item of posts"
-						[ngStyle]="{ 'background-image': 'url(' + item.image + ')' }"
-						(click)="openSinglePost(item)"
+						*ngFor="let item of getSelectedPosts(true)"
+						[ngStyle]="{'background-image': 'url(' + item.image_url + ')'}"
+						(click)="openPost(item)"
 					>
 						<ion-button fill="clear" bookMark (click)="bookmark(item, $event)">
 							<ion-icon
@@ -43,34 +47,55 @@
 								[ngClass]="{ active: item.bookmark }"
 							></ion-icon>
 						</ion-button>
-						<span category border-radius text-uppercase>{{
-							item.category
-						}}</span>
+						<span category border-radius text-uppercase>
+							{{item.site_name}}
+						</span>
 						<h2
 							class="ion-text-start"
 							wizard-title
 							[innerHTML]="getHtmlTitle(item.title)"
 						></h2>
 						<div clearfix></div>
-						<!-- Time -->
 						<ion-chip>
 							<ion-icon icon name="ios-stopwatch"></ion-icon>
-							<ion-label text-size-p class="ion-margin-end">{{
-								item.time | date: "d MMMM yyyy"
-							}}</ion-label>
+							<ion-label text-size-p class="ion-margin-end">
+								{{getTimeString(item.date)}}
+							</ion-label>
 						</ion-chip>
 					</ion-slide>
 				</ion-slides>
 			</ion-col>
-			<!-- Name Category -->
-			<ion-col size="12" no-padding *ngIf="postsRecentNews.length">
+
+			<!-- <ion-col size="12" no-padding>
 				<h1 padding-start text-size-lg>
 					{{ selectedCategory ? selectedCategory.name : "" }}
 				</h1>
-			</ion-col>
-			<!-- List Category Posts -->
-			<ion-col size="6" size-md="3" *ngFor="let item of postsRecentNews">
-				<news-item-home [data]="item"></news-item-home>
+			</ion-col> -->
+
+			<ion-col size="6" size-md="3" *ngFor="let item of getSelectedPosts(false)">
+				<ion-card
+					no-margin
+					box-shadow
+					border-radius
+					*ngIf="dataLoaded | async"
+					(click)="openPost(item)"
+				>
+					<div card-image>
+						<img border-radius [src]="item.image_url" alt="" />
+						<span border-radius category text-uppercase>{{ item.site_name }}</span>
+					</div>
+					<ion-card-content>
+						<h4 text-wrap text-size-xs>{{ item.title }}</h4>
+						<div itemTime class="ion-margin-top">
+							<ion-chip>
+								<ion-icon icon name="ios-stopwatch"></ion-icon>
+								<ion-label text-size-p class="ion-margin-end">
+									{{getTimeString(item.date)}}
+								</ion-label>
+							</ion-chip>
+						</div>
+					</ion-card-content>
+				</ion-card>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

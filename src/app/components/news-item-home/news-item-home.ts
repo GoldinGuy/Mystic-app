@@ -29,6 +29,22 @@ export class NewsItemHomePage {
     }
   }
 
+  getTimeString(time) {
+    var date = new Date(time);
+    var now = new Date();
+    var diff = Math.floor((now.getTime() - date.getTime()) / 60000);
+    if (diff < 60) {
+      var r = Math.ceil(diff)
+      return r + " minute" + (r == 1 ? "" : "s") + " ago"
+    } else if (diff < 60 * 24) {
+      var r = Math.ceil(diff / 60)
+      return r + " hour" + (r == 1 ? "" : "s") + " ago"
+    } else {
+      var r = Math.floor(diff / (60 * 24))
+      return r + " day" + (r == 1 ? "" : "s") + " ago"
+    }
+  }
+
   openSinglePost(item) {
     const navigationExtras: NavigationExtras = {
       queryParams: { item: JSON.stringify(item) }
