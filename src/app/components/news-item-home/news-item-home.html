@@ -2,21 +2,21 @@
 	no-margin
 	box-shadow
 	border-radius
-	*ngIf="data"
-	(click)="openSinglePost(data)"
+	*ngIf="item"
+	(click)="openPost(item)"
 >
 	<div card-image>
-		<img border-radius [src]="data.image" alt="" />
-		<span border-radius category text-uppercase>{{ data.category }}</span>
+		<img border-radius [src]="item.image" alt="" />
+		<span border-radius category text-uppercase>{{ item.category }}</span>
 	</div>
 	<ion-card-content>
-		<h4 text-wrap text-size-xs>{{ data.title }}</h4>
-		<div dataTime class="ion-margin-top">
+		<h4 text-wrap text-size-xs>{{ item.title }}</h4>
+		<div itemTime class="ion-margin-top">
 			<ion-chip>
 				<ion-icon icon name="ios-stopwatch"></ion-icon>
-				<ion-label text-size-p class="ion-margin-end">{{
-					data.time | date: "d MMMM yyyy"
-				}}</ion-label>
+				<ion-label text-size-p class="ion-margin-end">
+					{{getTimeString(item.date)}}
+				</ion-label>
 			</ion-chip>
 		</div>
 	</ion-card-content>
