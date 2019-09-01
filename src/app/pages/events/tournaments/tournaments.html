@@ -3,18 +3,34 @@
 		<ion-buttons slot="start">
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
-		<ion-title>Mystic - Your Magic Resource</ion-title>
+		<ion-title class="beleren fs-20">MYSTIC</ion-title>
 	</ion-toolbar>
-	<ion-toolbar>
-		<ion-segment [(ngModel)]="selectedItem">
-			<ion-segment-button text-capitalize>
-				Content
+	<ion-toolbar class="ion-segment-header">
+		<ion-segment class="ion-segment-header">
+			<ion-segment-button
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/home"
+				routerDirection="forward"
+			>
+				<ion-icon name="md-list-box"></ion-icon>
 			</ion-segment-button>
-			<ion-segment-button text-capitalize>
-				Tools
+			<ion-segment-button
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/bookmark"
+				routerDirection="forward"
+			>
+				<ion-icon name="ios-construct"></ion-icon>
 			</ion-segment-button>
-			<ion-segment-button text-capitalize>
-				Tournaments
+			<ion-segment-button
+				checked
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/tournaments"
+				routerDirection="back"
+			>
+				<ion-icon name="ios-trophy"></ion-icon>
 			</ion-segment-button>
 		</ion-segment>
 	</ion-toolbar>

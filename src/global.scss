@@ -1490,3 +1490,10 @@ ion-button[color="danger"] {
 	color: #231942 !important;
 	// background-color: #231942 !important;
 }
+
+.ion-segment-header {
+	--background: var(--mystic-toobarBackground, #ffffff) !important;
+	--background-checked: var(--mystic-toobarBackground, #ffffff) !important;
+	--background-activated: var(--mystic-toobarBackground, #ffffff) !important;
+	--color-checked: #9f86c0 !important;
+}

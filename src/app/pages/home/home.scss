@@ -14,6 +14,12 @@
 		}
 	}
 
+	.center {
+		align-content: center;
+		place-content: center;
+		position: relative;
+	}
+
 	ion-slides {
 		padding-bottom: 40px;
 
@@ -74,4 +80,17 @@
 			}
 		}
 	}
+}
+
+.ion-segment-header {
+	--background: var(--mystic-toobarBackground, #ffffff) !important;
+	--background-checked: var(--mystic-toobarBackground, #ffffff) !important;
+	--background-activated: var(--mystic-toobarBackground, #ffffff) !important;
+	--color-checked: #9f86c0 !important;
+}
+
+.h-125 {
+	height: 125px !important;
+	object-fit: cover;
+	// object-position: 100% 0;
 }

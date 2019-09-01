@@ -5,16 +5,32 @@
 		</ion-buttons>
 		<ion-title class="beleren fs-20">MYSTIC</ion-title>
 	</ion-toolbar>
-	<ion-toolbar>
-		<ion-segment [(ngModel)]="selectedItem">
-			<ion-segment-button text-capitalize>
-				Content
+	<ion-toolbar class="ion-segment-header">
+		<ion-segment class="ion-segment-header">
+			<ion-segment-button
+				checked
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/home"
+				routerDirection="forward"
+			>
+				<ion-icon name="md-list-box"></ion-icon>
 			</ion-segment-button>
-			<ion-segment-button text-capitalize>
-				Tools
+			<ion-segment-button
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/bookmark"
+				routerDirection="forward"
+			>
+				<ion-icon name="ios-construct"></ion-icon>
 			</ion-segment-button>
-			<ion-segment-button text-capitalize>
-				Tournaments
+			<ion-segment-button
+				text-capitalize
+				class="ion-segment-header"
+				routerLink="/events"
+				routerDirection="back"
+			>
+				<ion-icon name="ios-trophy"></ion-icon>
 			</ion-segment-button>
 		</ion-segment>
 	</ion-toolbar>
@@ -27,7 +43,9 @@
 				<h1 text-size-lg class="fs-20 beleren">LATEST IN MAGIC</h1>
 			</ion-col> -->
 			<ion-col size="12" *ngIf="dataNotLoaded">
-				<ion-spinner name="dots"></ion-spinner>
+				<div class="center">
+					<ion-spinner name="dots" class="center"></ion-spinner>
+				</div>
 			</ion-col>
 			<ion-col size="12">
 				<!-- Slider For Featured News -->
@@ -85,7 +103,7 @@
 					(click)="openPost(item)"
 				>
 					<div card-image>
-						<img border-radius [src]="item.image_url" alt="" />
+						<img border-radius class="h-125" [src]="item.image_url" alt="" />
 						<span border-radius category text-uppercase>{{
 							item.site_name
 						}}</span>
