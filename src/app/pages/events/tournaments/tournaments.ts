@@ -66,7 +66,7 @@ export class TournamentsPage {
 
 		if (this.round < 1 || this.participants.length < 2) {
 			await this.storage.set("round", 0);
-			this.router.navigate(["/menu/events"]);
+			this.router.navigate(["/events"]);
 		}
 
 		if (this.newTournament) {
@@ -187,7 +187,7 @@ export class TournamentsPage {
 
 	endEvent = () => {
 		this.round = 0;
-		this.router.navigate(["events/standings"]);
+		this.router.navigate(["/standings"]);
 	};
 }
 

@@ -78,7 +78,19 @@
 			</ion-segment>
 		</ion-toolbar>
 		<br />
-		<h2 class="beleren">PLAYERS</h2>
+		<h2 class="beleren">
+			PLAYERS
+			<!-- <div text-right class="mgt-0"> -->
+			<ion-button
+				expand="round"
+				color="primary"
+				size="small"
+				(click)="removeAll()"
+				class="txt-light pdt-0 mgl-100"
+				><ion-icon class="txt-light pdt-0" name="close-circle"></ion-icon>
+			</ion-button>
+			<!-- </div> -->
+		</h2>
 
 		<ion-list>
 			<ion-item-sliding *ngFor="let item of participants">
@@ -101,7 +113,7 @@
 				</ion-item-options>
 			</ion-item-sliding> -->
 
-			<ion-item lines="none"
+			<!-- <ion-item lines="none"
 				><p>Remove all</p>
 				<div text-right class="mgt-30 ">
 					<ion-button
@@ -112,7 +124,7 @@
 						class="txt-light mgt--40 mgl-100"
 						><ion-icon name="close-circle"></ion-icon>
 					</ion-button></div
-			></ion-item>
+			></ion-item> -->
 		</ion-list>
 
 		<!-- <p class="open fs-15">Remove all players</p> -->

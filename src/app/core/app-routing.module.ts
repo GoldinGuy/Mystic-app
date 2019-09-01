@@ -22,7 +22,12 @@ const routes: Routes = [
 	{
 		path: "tournaments",
 		loadChildren:
-			"../pages/tournaments/tournaments.module#TournamentsPageModule"
+			"../pages/events/tournaments/tournaments.module#TournamentsPageModule"
+	},
+	{
+		path: "standings",
+		loadChildren:
+			"../pages/events/standings/standings.module#standingsPageModule"
 	},
 	{
 		path: "about",

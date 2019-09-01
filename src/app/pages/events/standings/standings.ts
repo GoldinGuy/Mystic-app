@@ -118,7 +118,7 @@ export class standingsPage {
 
 	back() {
 		console.log("Going Back");
-		this.router.navigate(["/menu/events"]);
+		this.router.navigate(["/events"]);
 	}
 
 	// async showModal() {
