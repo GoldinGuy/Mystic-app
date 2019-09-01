@@ -245,6 +245,6 @@
 // 	right: 11px;
 // }
 
-.lightmode {
-	color: #f4f4f4;
+.rv {
+	color: var(--mystic-light, #000000);
 }

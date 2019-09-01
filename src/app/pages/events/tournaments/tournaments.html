@@ -75,7 +75,7 @@
 		</ion-button>
 	</div> -->
 	<div class="pdl-20 pdr-20 pdt-5">
-		<h2 class="beleren">ROUND {{ this.round }}</h2>
+		<h2 class="beleren rv">ROUND {{ this.round }}</h2>
 		<br />
 
 		<!-- Match pairings -->
@@ -89,20 +89,24 @@
 			<ion-grid>
 				<ion-row>
 					<ion-col>
-						<h5 class="open fs-17 ion-text-capitalize" side="start">
+						<h5 class="open fs-17 ion-text-capitalize rv" side="start">
 							{{ pairing.home.id }}
 						</h5>
 					</ion-col>
 					<ion-col>
-						<h3 ion-text-center class="center beleren" *ngIf="pairing.bye">
+						<h3 ion-text-center class="center beleren rv" *ngIf="pairing.bye">
 							BYE
 						</h3>
-						<h3 ion-text-center class="center beleren" *ngIf="!pairing.bye">
+						<h3 ion-text-center class="center beleren rv" *ngIf="!pairing.bye">
 							VS
 						</h3>
 					</ion-col>
 					<ion-col>
-						<h5 float-right class="open fs-17 ion-text-capitalize" side="end">
+						<h5
+							float-right
+							class="open fs-17 ion-text-capitalize rv"
+							side="end"
+						>
 							{{ pairing.away.id }}
 						</h5>
 					</ion-col>
@@ -110,7 +114,7 @@
 				<ion-row>
 					<ion-col>
 						<ion-select
-							class="beleren fs-18"
+							class="beleren fs-18 rv"
 							[(ngModel)]="pairing.home.score"
 							side="start"
 							placeholder="0"
@@ -120,9 +124,9 @@
 							float-left
 							*ngIf="!pairing.bye"
 						>
-							<ion-select-option value="0">0</ion-select-option>
-							<ion-select-option value="1">1</ion-select-option>
-							<ion-select-option value="2">2</ion-select-option>
+							<ion-select-option value="0" class="rv">0</ion-select-option>
+							<ion-select-option value="1" class="rv">1</ion-select-option>
+							<ion-select-option value="2" class="rv">2</ion-select-option>
 						</ion-select>
 					</ion-col>
 					<ion-col>
@@ -132,14 +136,14 @@
 							float-right
 							value="0"
 							mode="md"
-							class="beleren fs-18"
+							class="beleren fs-18 rv"
 							placeholder="0"
 							interface="popover"
 							*ngIf="!pairing.bye"
 						>
-							<ion-select-option value="0">0</ion-select-option>
-							<ion-select-option value="1">1</ion-select-option>
-							<ion-select-option value="2">2</ion-select-option>
+							<ion-select-option value="0" class="rv">0</ion-select-option>
+							<ion-select-option value="1" class="rv">1</ion-select-option>
+							<ion-select-option value="2" class="rv">2</ion-select-option>
 						</ion-select>
 					</ion-col>
 					<!-- <ion-toolbar>

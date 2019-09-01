@@ -44,6 +44,13 @@
 	right: 11px;
 }
 
+.pdt-0 {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+
 .mag {
 	margin-top: 20px;
 }
@@ -55,7 +62,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 205px;
+		height: 202px;
 		overflow: hidden;
 		.slogan {
 			position: relative;
@@ -199,4 +206,12 @@
 
 .center {
 	text-align: center;
+}
+
+.bdr-c {
+	--border-color: #cccccc;
+}
+
+.rv {
+	color: var(--mystic-light, #000000);
 }

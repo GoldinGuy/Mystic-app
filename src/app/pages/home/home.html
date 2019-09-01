@@ -3,18 +3,18 @@
 		<ion-buttons slot="start">
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
-		<ion-title>Mystic - Your Magic Resource</ion-title>
+		<ion-title class="beleren fs-20">MYSTIC</ion-title>
 	</ion-toolbar>
 	<ion-toolbar>
-		<!-- Segment Button Home Page -->
 		<ion-segment [(ngModel)]="selectedItem">
-			<ion-segment-button
-				text-capitalize
-				[value]="item.name"
-				*ngFor="let item of categories"
-				(click)="refreshData(item)"
-			>
-				{{ item.name }}
+			<ion-segment-button text-capitalize>
+				Content
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tools
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tournaments
 			</ion-segment-button>
 		</ion-segment>
 	</ion-toolbar>
@@ -23,11 +23,11 @@
 <ion-content>
 	<ion-grid>
 		<ion-row>
-			<ion-col size="12">
-				<h1 text-size-lg>Latest in Magic</h1>
-			</ion-col>
+			<!-- <ion-col size="12">
+				<h1 text-size-lg class="fs-20 beleren">LATEST IN MAGIC</h1>
+			</ion-col> -->
 			<ion-col size="12" *ngIf="dataNotLoaded">
-				PUT LOADING GIF HERE
+				<ion-spinner name="dots"></ion-spinner>
 			</ion-col>
 			<ion-col size="12">
 				<!-- Slider For Featured News -->
@@ -36,19 +36,19 @@
 						background-size
 						padding
 						*ngFor="let item of getSelectedPosts(true)"
-						[ngStyle]="{'background-image': 'url(' + item.image_url + ')'}"
+						[ngStyle]="{ 'background-image': 'url(' + item.image_url + ')' }"
 						(click)="openPost(item)"
 					>
-						<ion-button fill="clear" bookMark (click)="bookmark(item, $event)">
+						<!-- <ion-button fill="clear" bookMark (click)="bookmark(item, $event)">
 							<ion-icon
 								icon-small
 								name="ios-bookmark"
 								margin-left
 								[ngClass]="{ active: item.bookmark }"
 							></ion-icon>
-						</ion-button>
+						</ion-button> -->
 						<span category border-radius text-uppercase>
-							{{item.site_name}}
+							{{ item.site_name }}
 						</span>
 						<h2
 							class="ion-text-start"
@@ -59,7 +59,7 @@
 						<ion-chip>
 							<ion-icon icon name="ios-stopwatch"></ion-icon>
 							<ion-label text-size-p class="ion-margin-end">
-								{{getTimeString(item.date)}}
+								{{ getTimeString(item.date) }}
 							</ion-label>
 						</ion-chip>
 					</ion-slide>
@@ -72,7 +72,11 @@
 				</h1>
 			</ion-col> -->
 
-			<ion-col size="6" size-md="3" *ngFor="let item of getSelectedPosts(false)">
+			<ion-col
+				size="6"
+				size-md="3"
+				*ngFor="let item of getSelectedPosts(false)"
+			>
 				<ion-card
 					no-margin
 					box-shadow
@@ -82,7 +86,9 @@
 				>
 					<div card-image>
 						<img border-radius [src]="item.image_url" alt="" />
-						<span border-radius category text-uppercase>{{ item.site_name }}</span>
+						<span border-radius category text-uppercase>{{
+							item.site_name
+						}}</span>
 					</div>
 					<ion-card-content>
 						<h4 text-wrap text-size-xs>{{ item.title }}</h4>
@@ -90,7 +96,7 @@
 							<ion-chip>
 								<ion-icon icon name="ios-stopwatch"></ion-icon>
 								<ion-label text-size-p class="ion-margin-end">
-									{{getTimeString(item.date)}}
+									{{ getTimeString(item.date) }}
 								</ion-label>
 							</ion-chip>
 						</div>

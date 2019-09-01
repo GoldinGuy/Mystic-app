@@ -48,13 +48,13 @@
 		</ion-fab-button>
 	</ion-fab>
 	<div class="pdl-20 pdr-20 pdt-5">
-		<h2 class="beleren">STANDINGS</h2>
+		<h2 class="beleren rv">STANDINGS</h2>
 
 		<br />
 
-		<ion-list>
-			<ion-item class="open" *ngFor="let person of results">
-				<h5 class="open ion-text-capitalize fs-19">
+		<ion-list class="pdt-0 rv">
+			<ion-item class="open pdt-0 rv bdr-c" *ngFor="let person of results">
+				<h5 class="open ion-text-capitalize fs-19 rv">
 					{{ person.index }} | {{ person.id }}
 				</h5>
 
@@ -63,7 +63,7 @@
 						float-right
 						side="end"
 						mode="ios"
-						class="open fs-14"
+						class="open fs-14 rv"
 						id="longMessage"
 						expand="block"
 						(click)="presentAlertLongMessage(person)"
