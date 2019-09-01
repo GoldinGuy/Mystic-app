@@ -36,8 +36,19 @@
 	</ion-toolbar>
 </ion-header>
 <!-- Content -->
+<ion-fab class="filter" vertical="bottom" horizontal="end" edge id="fab1">
+	<ion-fab-button
+		mini
+		class="e2eFabTopRight filter"
+		routerLink="/contentFilters"
+		routerDirection="forward"
+	>
+		<ion-icon name="md-funnel" color="secondary"></ion-icon>
+	</ion-fab-button>
+</ion-fab>
+
 <ion-content>
-	<ion-grid>
+	<ion-grid class="z-grid">
 		<ion-row>
 			<!-- <ion-col size="12">
 				<h1 text-size-lg class="fs-20 beleren">LATEST IN MAGIC</h1>
@@ -65,9 +76,17 @@
 								[ngClass]="{ active: item.bookmark }"
 							></ion-icon>
 						</ion-button> -->
-						<span category border-radius text-uppercase>
-							{{ item.site_name }}
+						<span category class="logo">
+							<!-- {{ item.site_name }} -->
+							<ion-thumbnail class="bdr-5">
+								<img
+									src="/assets/imgs/logos/cardkingdom.jpg"
+									alt=""
+									class="logo-inner bdr-5"
+								/>
+							</ion-thumbnail>
 						</span>
+
 						<h2
 							class="ion-text-start"
 							wizard-title
@@ -104,9 +123,19 @@
 				>
 					<div card-image>
 						<img border-radius class="h-125" [src]="item.image_url" alt="" />
-						<span border-radius category text-uppercase>{{
+						<!-- <span border-radius category text-uppercase>{{
 							item.site_name
-						}}</span>
+						}}</span> -->
+						<span category-small class="logo">
+							<!-- {{ item.site_name }} -->
+							<ion-thumbnail class="bdr-5">
+								<img
+									src="/assets/imgs/logos/mtggoldfish.jpeg"
+									alt=""
+									class="logo-inner bdr-5"
+								/>
+							</ion-thumbnail>
+						</span>
 					</div>
 					<ion-card-content>
 						<h4 text-wrap text-size-xs>{{ item.title }}</h4>

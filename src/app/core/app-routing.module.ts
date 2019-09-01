@@ -12,6 +12,11 @@ const routes: Routes = [
 		loadChildren: "../pages/category/category.module#CategoryPageModule"
 	},
 	{
+		path: "contentFilters",
+		loadChildren:
+			"../pages/contentFilters/contentFilters.module#ContentFiltersPageModule"
+	},
+	{
 		path: "bookmark",
 		loadChildren: "../pages/bookmark/bookmark.module#BookmarkPageModule"
 	},
