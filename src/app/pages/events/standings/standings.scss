@@ -20,18 +20,6 @@
 	}
 }
 
-.lightmode {
-	color: #f4f4f4;
-}
-
-.list {
-	color: #ffffff;
-}
-
-.list2 {
-	color: #000000;
-}
-
 .cdpd {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -51,7 +39,8 @@
 }
 
 .filter {
-	top: 132px;
+	// top: 132px;
+	top: 217px;
 	right: 11px;
 }
 
@@ -66,7 +55,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 295px;
+		height: 205px;
 		overflow: hidden;
 		.slogan {
 			position: relative;
@@ -201,10 +190,6 @@
 			flex: 1;
 		}
 	}
-}
-
-.white {
-	color: #ffffff;
 }
 
 .but {

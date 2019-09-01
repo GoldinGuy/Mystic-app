@@ -20,6 +20,28 @@
 	}
 }
 
+// .md ion-list > .item:last-child,
+// .md ion-list > .item-wrapper:last-child .item,
+// .wp ion-list > .item:last-child,
+// .wp ion-list > .item-wrapper:last-child .item,
+// .ios ion-list > .item:last-child,
+// .ios ion-list > .item-wrapper:last-child .item {
+// 	border-bottom: none;
+// }
+
+.list-ios > .item-block:first-child {
+	border-top: none !important;
+}
+.list-ios > .item-block:last-child {
+	border-bottom: none !important;
+}
+.list-md > .item-block:first-child {
+	border-top: none !important;
+}
+.list-md > .item-block:last-child {
+	border-bottom: none !important;
+}
+
 .list {
 	color: #ffffff;
 }

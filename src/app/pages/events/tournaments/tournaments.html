@@ -7,18 +7,18 @@
 	</ion-toolbar>
 	<ion-toolbar>
 		<ion-segment [(ngModel)]="selectedItem">
-			<ion-segment-button
-				text-capitalize
-				[value]="item.name"
-				*ngFor="let item of categories"
-				(click)="refreshData(item)"
-			>
-				{{ item.name }}
+			<ion-segment-button text-capitalize>
+				Content
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tools
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tournaments
 			</ion-segment-button>
 		</ion-segment>
 	</ion-toolbar>
 </ion-header>
-
 <ion-content>
 	<!--<ion-grid>
 		<ion-row>

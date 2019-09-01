@@ -1,18 +1,55 @@
-<ion-content fullscreen common-parallax [scrollEvents]="true" class="lightmode">
-	<div class="wrap-blog-post bg-light offset-top-obj">
+<ion-header box-shadow>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Mystic - Your Magic Resource</ion-title>
+	</ion-toolbar>
+	<ion-toolbar>
+		<ion-segment [(ngModel)]="selectedItem">
+			<ion-segment-button text-capitalize>
+				Content
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tools
+			</ion-segment-button>
+			<ion-segment-button text-capitalize>
+				Tournaments
+			</ion-segment-button>
+		</ion-segment>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="wrap-blog-post bg-light ">
 		<div class="cover">
 			<div class="slogan p dl-40 txt-light ">
 				<p class="uppercase fs-14"></p>
-				<h4 no-margin text-center class="fs-34 top beleren">
-					RESULTS
-				</h4>
+				<!-- <h4 no-margin text-center class="fs-34 top beleren">
+					MATCH PAIRINGS
+				</h4> -->
 			</div>
 			<div class="bg-img">
-				<img class="" src="/assets/images/lemon6.png" />
+				<img
+					class="parallax-obj parallax-up-obj parallax-blur-obj"
+					src="/assets/imgs/home4.JPG"
+				/>
 			</div>
 		</div>
 	</div>
-	<div class="main-form pdl-20 pdr-20">
+	<!-- slot="fixed" -->
+	<ion-fab class="filter" vertical="top" horizontal="end" edge id="fab1">
+		<ion-fab-button
+			mini
+			class="e2eFabTopRight"
+			routerLink="/menu/tools/timer"
+			routerDirection="forward"
+		>
+			<ion-icon name="md-text"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+	<div class="pdl-20 pdr-20 pdt-5">
+		<h2 class="beleren">STANDINGS</h2>
+
 		<br />
 
 		<ion-list>
@@ -39,7 +76,7 @@
 		</ion-list>
 
 		<!-- Match pairings -->
-
+		<!-- 
 		<div text-center class="fs-30 fw-900 mgt-20 mgb-20 spacing1">
 			<ion-button
 				expand="round"
@@ -51,7 +88,7 @@
 			>
 				<h2 class="beleren white">SHARE STANDINGS</h2>
 			</ion-button>
-		</div>
+		</div> -->
 
 		<div text-center class="fs-30 fw-900 mgt-20 mgb-20 spacing1">
 			<ion-button
