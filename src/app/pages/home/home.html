@@ -80,7 +80,7 @@
 							<!-- {{ item.site_name }} -->
 							<ion-thumbnail class="bdr-5">
 								<img
-									src="/assets/imgs/logos/cardkingdom.jpg"
+									[src]="getImageURL(item)"
 									alt=""
 									class="logo-inner bdr-5"
 								/>
@@ -130,7 +130,7 @@
 							<!-- {{ item.site_name }} -->
 							<ion-thumbnail class="bdr-5">
 								<img
-									src="/assets/imgs/logos/mtggoldfish.jpeg"
+									[src]="getImageURL(item)"
 									alt=""
 									class="logo-inner bdr-5"
 								/>

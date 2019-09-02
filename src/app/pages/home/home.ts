@@ -140,6 +140,17 @@ export class HomePage {
 		}
 	}
 
+	getImageURL(item) {
+		var url = item.site_name;
+		url = "assets/imgs/logos/" + this.replaceAll(url, " ", "_").toLowerCase() + ".jpg";
+		console.log(item.site_name + ' : url : ' + url);
+		return url;
+	}
+
+	replaceAll(str, find, replace) {
+		return str.replace(new RegExp(find, 'g'), replace);
+	}
+
 	// showBannerAds() {
 	//   if (!ConfigData.bannerAds.enable) {
 	//     return;
