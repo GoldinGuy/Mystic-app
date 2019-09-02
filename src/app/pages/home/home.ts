@@ -48,6 +48,9 @@ export class HomePage {
 	postsInSlider: number;
 	postsExtra: number;
 	postsExtraAdd: number;
+	noImageCycleCounter: number;
+	noImageCycleMax: number;
+	imageBaseURL: string;
 
 	constructor(
 		// private admobFree: AdMobFree,
@@ -66,6 +69,9 @@ export class HomePage {
 		this.postsInSlider = 3;
 		this.postsExtra = 10;
 		this.postsExtraAdd = 10;
+		this.noImageCycleCounter = 0;
+		this.noImageCycleMax = 28;
+		this.imageBaseURL = "assets/imgs/";
 
 		// this.postPageLoaded = 1;
 		// // this.showBannerAds();
@@ -140,11 +146,25 @@ export class HomePage {
 		}
 	}
 
-	getImageURL(item) {
+	getLogoURL(item) {
 		var url = item.site_name;
-		url = "assets/imgs/logos/" + this.replaceAll(url, " ", "_").toLowerCase() + ".jpg";
-		console.log(item.site_name + ' : url : ' + url);
-		return url;
+		url = this.imageBaseURL + "logos/" + this.replaceAll(url, " ", "_").toLowerCase() + ".jpg";
+		return url
+	}
+
+	getImageURL(item) {
+		if (item.image_url != null) {
+			var url = item.image_url;
+			return url
+		} else {
+			this.noImageCycleCounter++;
+			if (this.noImageCycleCounter > this.noImageCycleMax) {
+				this.noImageCycleCounter = 1;
+			}
+			var urlA = this.imageBaseURL + "grid" + this.noImageCycleCounter + ".JPG";
+			item.image_url = urlA;
+			return urlA;
+		}
 	}
 
 	replaceAll(str, find, replace) {
